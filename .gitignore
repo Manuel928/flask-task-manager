@@ -1,0 +1,17 @@
+# Python-related files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+.env
+
+# SQLite database
+*.db
+
+# SQL files
+*.sql
+
+# Other IDE/OS-specific files
+*.vscode/
+.DS_Store
