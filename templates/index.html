@@ -29,31 +29,31 @@
         <tbody>
           {% for task in tasks %}
           <tr>
-            <th scope="row">{{ task["id"] }}</th>
-            <td>{{ task["title"] }}</td>
+            <th scope="row">{{ task['id'] }}</th>
+            <td>{{ task['title'] }}</td>
             <!-- <td>{{ task["priority"] }}</td> -->
             <td>
-              {% if task["priority"] == "High" %}
+              {% if task['priority'] == "High" %}
               <span class="text-danger"><i class="bi bi-circle-fill"></i></span> High
-              {% elif task["priority"] == "Medium" %}
+              {% elif task['priority'] == "Medium" %}
               <span class="text-warning"><i class="bi bi-circle-fill"></i></span> Medium
-              {% elif task["priority"] == "Low" %}
+              {% elif task['priority'] == "Low" %}
               <span class="text-primary"><i class="bi bi-circle-fill"></i></span> Low
               {% endif %}
             </td>
             <!-- <td>{{ task["status"] }}</td> -->
             <td>
-              {% if task["status"] == "Pending" %}
+              {% if task['status'] == "Pending" %}
               <span class="text-warning"><i class="bi bi-clock"></i></span> Pending
-              {% elif task["status"] == "In Progress" %}
+              {% elif task['status'] == "In Progress" %}
               <span class="text-primary"><i class="bi bi-arrow-repeat"></i></span> In Progress
-              {% elif task["status"] == "Completed" %}
+              {% elif task['status'] == "Completed" %}
               <span class="text-success"><i class="bi bi-check-circle"></i></span> Completed
               {% endif %}
             </td>
-            <td>{{ task["due_date_and_time"] }}</td>
+            <td>{{ task['due_date_and_time'] }}</td>
             <td class="text-center">
-              {% if task["status"] != 'Completed' %}
+              {% if task['status'] != 'Completed' %}
               <a href="/complete/{{ task['id'] }}" class="btn btn-success btn-sm ms-2 m-1"><i class="bi bi-check"></i></a>
               {% endif %}
               <a href="/edit_task/{{ task['id'] }}" class="btn btn-dark btn-sm m-1">Edit</a>

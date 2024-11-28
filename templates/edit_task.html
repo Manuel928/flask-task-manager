@@ -12,32 +12,32 @@
 <body>
   <h1>Edit Task</h1>
   <div class="container mt-5">
-    <form action="/edit_task/{{ data[0] }}" class="shadow p-4 rounded bg-light" method="POST">
+    <form action="/edit_task/{{ data[0]['id'] }}" class="shadow p-4 rounded bg-light" method="POST">
       <div class="mb-3">
         <label for="title" class="form-label">Title:</label>
-        <input type="text" id="title" class="form-control" name="title" minlength="3" value="{{ data[1] }}" required>
+        <input type="text" id="title" class="form-control" name="title" minlength="3" value="{{ data[0]['title'] }}" required>
       </div>
       <div class="mb-3">
         <label for="priority">Priority:</label>
         <select class="form-select" name="priority" id="priority" required>
           <option selected>Select</option>
-          <option value="Low" {% if data[2] == "Low" %} selected {% endif %}>Low</option>
-          <option value="Medium" {% if data[2] == "Medium" %} selected {% endif %}>Medium</option>
-          <option value="High" {% if data[2] == "High" %} selected {% endif %}>High</option>
+          <option value="Low" {% if data[0]['priority'] == "Low" %} selected {% endif %}>Low</option>
+          <option value="Medium" {% if data[0]['priority'] == "Medium" %} selected {% endif %}>Medium</option>
+          <option value="High" {% if data[0]['priority'] == "High" %} selected {% endif %}>High</option>
         </select>
       </div>
       <div class="mb-3">
         <label for="status">Status:</label>
         <select class="form-select" name="status" id="status" required>
           <option selected>Select</option>
-          <option value="Pending" {% if data[3] == "Pending" %} selected {% endif %}>Pending</option>
-          <option value="In Progress" {% if data[3] == "In Progress" %} selected {% endif %}>In Progress</option>
-          <option value="Completed" {% if data[3] == "Completed" %} selected {% endif %}>Completed</option>
+          <option value="Pending" {% if data[0]['status'] == "Pending" %} selected {% endif %}>Pending</option>
+          <option value="In Progress" {% if data[0]['status'] == "In Progress" %} selected {% endif %}>In Progress</option>
+          <option value="Completed" {% if data[0]['status'] == "Completed" %} selected {% endif %}>Completed</option>
         </select>
       </div>
       <div class="mb-3">
         <label for="due_date_and_time">Due Date and Time:</label>
-        <input type="datetime-local" name="due_date_and_time" id="due_date_and_time" value="{{ data[4] }}" required>
+        <input type="datetime-local" name="due_date_and_time" id="due_date_and_time" value="{{ data[0]['due_date_and_time'] }}" required>
       </div>
       <button type="submit" class="btn btn-warning btn-md">Update Task</button>
     </form>
