@@ -1,0 +1,11 @@
+# Exported from Render on 2024-11-28T17:54:00Z
+services:
+- type: web
+  name: flask-task-manager
+  runtime: python
+  repo: https://github.com/Manuel928/flask-task-manager
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn app:app
+version: "1"
